@@ -1,0 +1,221 @@
+Pseudocodigo Sistema General:
+
+INICIO
+
+    Crear clase Curso
+        Atributos:
+            id
+            nombre_curso
+            costo
+            participantes_esperados
+            prioridad
+    Fin Clase
+
+    Cargar lista de cursos
+
+    presupuesto ← 120.000.000
+
+    Inicializar variables para almacenar resultados
+        Greedy
+        Backtracking
+
+    Repetir
+
+        Mostrar menú principal
+
+        Leer opción
+
+        Según opción hacer
+
+            1:
+                Mostrar todos los cursos disponibles
+
+            2:
+                Mostrar presupuesto disponible
+
+            3:
+                Ejecutar algoritmo Greedy
+                Guardar resultados
+
+            4:
+                Ejecutar algoritmo Backtracking
+                Guardar resultados
+
+            5:
+                Mostrar cursos seleccionados
+                según el algoritmo elegido
+
+            6:
+                Mostrar costo total y participantes
+                según el algoritmo elegido
+
+            7:
+                Comparar resultados entre
+                Greedy y Backtracking
+
+            8:
+                Mostrar análisis de complejidad
+
+            9:
+                Salir del programa
+
+        Fin Según
+
+    Hasta que la opción sea 9
+
+FIN
+
+Pseudocodigo Greedy:
+
+FUNCIÓN EjecutarGreedy(cursos, presupuesto)
+
+    Ordenar los cursos de mayor a menor
+    según la relación:
+
+        participantes_esperados / costo
+
+    Crear lista seleccionados
+
+    gasto ← 0
+
+    participantes ← 0
+
+    Para cada curso de la lista ordenada hacer
+
+        Si gasto + costo del curso
+        es menor o igual al presupuesto Entonces
+
+            Agregar curso a seleccionados
+
+            gasto ← gasto + costo del curso
+
+            participantes ← participantes
+                            + participantes del curso
+
+        Fin Si
+
+    Fin Para
+
+    Retornar
+        seleccionados,
+        gasto,
+        participantes
+
+FIN FUNCIÓN
+
+Pseudocodigo Backtracking
+
+FUNCIÓN EjecutarBacktracking(cursos, presupuesto)
+
+    mejorParticipantes ← 0
+
+    mejorCosto ← 0
+
+    mejorCombinacion ← lista vacía
+
+    Llamar Backtrack(
+        indice = 0,
+        costoActual = 0,
+        participantesActual = 0,
+        combinacionActual = vacía
+    )
+
+    Retornar
+        mejorCombinacion,
+        mejorCosto,
+        mejorParticipantes
+
+FIN FUNCIÓN
+
+Procedimiento Backtrack
+
+PROCEDIMIENTO Backtrack(
+    indice,
+    costoActual,
+    participantesActual,
+    combinacionActual
+)
+
+    Si costoActual > presupuesto Entonces
+
+        Retornar
+
+    Fin Si
+
+
+    Si participantesActual >
+       mejorParticipantes Entonces
+
+        mejorParticipantes ← participantesActual
+
+        mejorCosto ← costoActual
+
+        mejorCombinacion ← copia de
+                           combinacionActual
+
+    Fin Si
+
+
+    Para i ← indice Hasta
+    cantidadCursos - 1 Hacer
+
+        Agregar curso[i]
+        a combinacionActual
+
+        Backtrack(
+
+            i + 1,
+
+            costoActual + costo del curso[i],
+
+            participantesActual
+            + participantes del curso[i],
+
+            combinacionActual
+
+        )
+
+        Eliminar el último curso
+        de combinacionActual
+
+    Fin Para
+
+FIN PROCEDIMIENTO
+
+Pseudocodigo comparación
+
+PROCEDIMIENTO CompararResultados
+
+    Si Greedy no fue ejecutado
+    o Backtracking no fue ejecutado Entonces
+
+        Mostrar mensaje de error
+
+    Sino
+
+        Mostrar resultados de Greedy
+
+        Mostrar resultados de Backtracking
+
+        Si participantes Backtracking
+        > participantes Greedy Entonces
+
+            Mostrar
+            "Backtracking encontró una mejor solución"
+
+        Sino Si participantes Greedy
+        = participantes Backtracking Entonces
+
+            Mostrar
+            "Ambos algoritmos obtuvieron la misma solución"
+
+        Sino
+
+            Mostrar
+            "Greedy obtuvo un mejor resultado"
+
+        Fin Si
+
+    Fin Si
+
+FIN PROCEDIMIENTO
