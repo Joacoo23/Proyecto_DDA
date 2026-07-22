@@ -13,11 +13,11 @@ Python 3.x instalado en el sistema local.
 No se requieren librerías externas de terceros (el código utiliza únicamente el módulo estándar os).
 
 ## Instrucciones de uso:
-Descargar el archivo Proyecto_Final_DA.py.
+Descargar el archivo Proyecto_Terminado.py.
 
 Abrir una terminal o consola de comandos en el directorio donde se guardó el archivo.
 
-Ejecutar el script usando el comando: python Proyecto_Final_DA.py.
+Ejecutar el script usando el comando: python Proyecto_Terminado.py.
 
 Navegar por el menú interactivo ingresando el número correspondiente a la opción deseada.
 
