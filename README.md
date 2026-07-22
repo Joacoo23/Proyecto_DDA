@@ -1,9 +1,9 @@
 # Proyecto Diseño de Algoritmos.
 Este es nuestro proyecto final para 'diseño de algoritmos'.
 ## Integrantes:
-# Jorge Silva
-# Cristobal Riquelme
-# Joaquin Riveros.
+#### Jorge Silva
+#### Cristobal Riquelme
+#### Joaquin Riveros
 
 ## Descripcion del proyecto:
 Este proyecto es una aplicación interactiva en Python. El objetivo principal es seleccionar la combinación de cursos que permita capacitar a la mayor cantidad de estudiantes posible, respetando un presupuesto estricto de 120 millones de pesos. Para resolver este desafío, el sistema procesa los datos de los cursos (costos y participantes esperados) utilizando y comparando dos estrategias algorítmicas diferentes (Greedy y Backtracking) hasta encontrar la selección ideal que maximiza el beneficio sin exceder los recursos económicos.
